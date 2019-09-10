@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Getting started with python and QT</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">MaiteLab </a></h1>
+                <nav><ul>
+                    <li><a href="/category/about.html">About</a></li>
+                    <li><a href="/category/mobile.html">Mobile</a></li>
+                    <li class="active"><a href="/category/python.html">Python</a></li>
+                </ul>
+                </nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/python-qt.html" rel="bookmark"
+           title="Permalink to Getting started with python and QT">Getting started with python and QT</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <span>mar 01 enero 2019</span>
+<span>| tags: <a href="/tag/python.html">python</a><a href="/tag/gui.html">gui</a><a href="/tag/desktop.html">desktop</a></span>
+</footer><!-- /.post-info -->      <h1>Desktop App development with Python</h1>
+<p>Instructions for creating a "hello world" desktop app with python to get you started. We cover three different GUI libraries: wxPython, GTK and QT (look for all 3 options in different pages of this blog, in this current page we cover only one of the options). Please do not use python tk because it does not produce accessible software (That is, software that can be used with a screen reader). There are already a lot of tutorials on internet about how to make desktop apps with python, but they 
+don't tell you how to get started from zero, so we will cover that here.</p>
+<p>General notes to help you decide which UI library to use:</p>
+<ul>
+<li>Keep in mind that GTK is accessible in Linux, but not in Windows. Usually (if used correctly) GTK feels more natural in a Linux environment. The GNOME Desktop Environment is made with GTK.</li>
+<li>wxPython is often used by blind developers.</li>
+<li>QT is very mature and has extra features not available in the other libraries, like: Charts, Android deployment... Be sure to check the QT official web site for more info on what you can do with it.</li>
+<li>The KDE Desktop environment uses QT. </li>
+</ul>
+<h1>Hello World with python and QT</h1>
+<p>We must first stablish the difference between "PyQT" and "QT for Python":</p>
+<table>
+<thead>
+<tr>
+<th align="left">GUI library</th>
+<th align="left">Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">PyQT</td>
+<td align="left">- Mature (many years of history)</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">- Lots of books and examples available</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">- Not free for commercial products</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">- Made by a third party company</td>
+</tr>
+<tr>
+<td align="left">QT For Python</td>
+<td align="left">- New (First version from around 2018)</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">- Little documentation available</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">- Free for commercial products</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">- Official version from QT</td>
+</tr>
+</tbody>
+</table>
+<p>I recommend you also read this comparison: https://machinekoder.com/pyqt-vs-qt-for-python-pyside2-pyside/</p>
+<p>This text is about QT for python only.</p>
+<h3>How to install QT for python</h3>
+<p>Just use PIP like:</p>
+<div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">PySide2</span>
+</pre></div>
+
+
+<p>If you want to run the OpenGL examples, also install:</p>
+<div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">PyOpenGL</span> <span class="n">PyOpenGL_accelerate</span>
+</pre></div>
+
+
+<h3>Hello world in QT for Python</h3>
+<p>This example was copied from: https://doc.qt.io/qtforpython/tutorials/basictutorial/clickablebutton.html</p>
+<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">PySide2.QtWidgets</span> <span class="kn">import</span> <span class="n">QApplication</span><span class="p">,</span> <span class="n">QPushButton</span>
+<span class="kn">from</span> <span class="nn">PySide2.QtCore</span> <span class="kn">import</span> <span class="n">Slot</span>
+
+<span class="nd">@Slot</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">say_hello</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Button clicked, Hello!&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create the Qt Application</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+<span class="c1"># Create a button, connect it and show it</span>
+<span class="n">button</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="s2">&quot;Click me&quot;</span><span class="p">)</span>
+<span class="n">button</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">say_hello</span><span class="p">)</span>
+<span class="n">button</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1"># Run the main Qt loop</span>
+<span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>
+</pre></div>
+
+
+<p>To learn more, visit the examples that the wheel installed in your computer, they are located in the "site-packages" folder 
+of your python environment ( usually something like:  python3.6/site-packages/PySide2/examples ).</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="https://planetpython.org/">Python news</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.pygame.org/">PyGame</a></li>
+                            <li><a href="https://planetpython.org/">Python planet</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme <a href="https://github.com/blueicefield/pelican-blueidea/">blueidea</a>, inspired by the default theme.</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

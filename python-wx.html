@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Getting started with python and wxPython</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">MaiteLab </a></h1>
+                <nav><ul>
+                    <li><a href="/category/about.html">About</a></li>
+                    <li><a href="/category/mobile.html">Mobile</a></li>
+                    <li class="active"><a href="/category/python.html">Python</a></li>
+                </ul>
+                </nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/python-wx.html" rel="bookmark"
+           title="Permalink to Getting started with python and wxPython">Getting started with python and wxPython</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <span>mar 01 enero 2019</span>
+<span>| tags: <a href="/tag/python.html">python</a><a href="/tag/gui.html">gui</a><a href="/tag/desktop.html">desktop</a></span>
+</footer><!-- /.post-info -->      <h1>Desktop App development with Python</h1>
+<p>Instructions for creating a "hello world" desktop app with python to get you started. We cover three different GUI libraries: wxPython, GTK and QT (look for all 3 options in different pages of this blog, in this current page we cover only one of the options). Please do not use python tk because it does not produce accessible software (That is, software that can be used with a screen reader). There are already a lot of tutorials on internet about how to make desktop apps with python, but they 
+don't tell you how to get started from zero, so we will cover that here.</p>
+<p>General notes to help you decide which UI library to use:</p>
+<ul>
+<li>Keep in mind that GTK is accessible in Linux, but not in Windows. Usually (if used correctly) GTK feels more natural in a Linux environment. The GNOME Desktop Environment is made with GTK.</li>
+<li>wxPython is often used by blind developers.</li>
+<li>QT is very mature and has extra features not available in the other libraries, like: Charts, Android deployment... Be sure to check the QT official web site for more info on what you can do with it.</li>
+<li>The KDE Desktop environment uses QT. </li>
+</ul>
+<h1>Hello World with wxPython</h1>
+<h3>How to instal wxPython in Windows</h3>
+<p>Just do a pip install like:</p>
+<div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">wxpython</span>
+</pre></div>
+
+
+<h3>How to instal wxPython in Linux (tested with Debian 10 buster)</h3>
+<p>We first need to install basic development libraries</p>
+<div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">build</span><span class="o">-</span><span class="n">essential</span> 
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">libwebkit2gtk</span><span class="o">-</span><span class="mi">4</span><span class="p">.</span><span class="mi">0</span> <span class="n">libjpeg</span><span class="o">-</span><span class="n">dev</span> <span class="n">libtiff</span><span class="o">-</span><span class="n">dev</span> <span class="n">libgtk2</span><span class="p">.</span><span class="mi">0</span><span class="o">-</span><span class="n">dev</span> <span class="n">libsdl1</span><span class="p">.</span><span class="mi">2</span><span class="o">-</span><span class="n">dev</span> <span class="n">freeglut3</span> <span class="n">freeglut3</span><span class="o">-</span><span class="n">dev</span> <span class="n">libnotify</span><span class="o">-</span><span class="n">dev</span>
+</pre></div>
+
+
+<p>Note 1 : I recommend you to create your python environment before doing the next steps</p>
+<p>Note 2 : If you create a python environment... it is recommended you set another temporary folder for pip (if you don't you may get the error "no space left on device" while running pip install wxpython). To setup another temporary folder for pip (anywhere you have write access), just create another folder, then assign the TMPDIR environment variable to it</p>
+<div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">TMPDIR</span><span class="o">=/</span><span class="n">another_temporary_folder</span>
+</pre></div>
+
+
+<p>Now prepare some coffee because these next steps will take a long time to complete</p>
+<div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">config</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">pathlib2</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">wxpython</span>
+</pre></div>
+
+
+<p>To make sure wxPython is installed ok, try this code:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">wx</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">wx</span><span class="o">.</span><span class="n">App</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>  <span class="c1"># Create a new app, don&#39;t redirect stdout/stderr to a window.</span>
+<span class="n">frame</span> <span class="o">=</span> <span class="n">wx</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="n">wx</span><span class="o">.</span><span class="n">ID_ANY</span><span class="p">,</span> <span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span> <span class="c1"># A Frame is a top-level window.</span>
+<span class="n">frame</span><span class="o">.</span><span class="n">Show</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>     <span class="c1"># Show the frame.</span>
+<span class="n">app</span><span class="o">.</span><span class="n">MainLoop</span><span class="p">()</span>
+</pre></div>
+
+
+<p>From here, the best place to go for is the wxPython github, look inside the examples and demo folders, you will get plenty of 
+easy to understand code that you can learn from.</p>
+<h4>Important links related to wxPython</h4>
+<ul>
+<li>https://wxpythonfromscratch.github.io/blog/</li>
+<li>https://realpython.com/python-gui-with-wxpython/</li>
+<li>https://www.blog.pythonlibrary.org/2019/03/19/distributing-a-wxpython-application/</li>
+</ul>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="https://planetpython.org/">Python news</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.pygame.org/">PyGame</a></li>
+                            <li><a href="https://planetpython.org/">Python planet</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme <a href="https://github.com/blueicefield/pelican-blueidea/">blueidea</a>, inspired by the default theme.</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

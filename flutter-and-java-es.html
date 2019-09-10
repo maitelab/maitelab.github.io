@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Cómo combinar Flutter y Java en una Android App y por qué es importante.</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">MaiteLab </a></h1>
+                <nav><ul>
+                    <li><a href="/category/about.html">About</a></li>
+                    <li class="active"><a href="/category/mobile.html">Mobile</a></li>
+                    <li><a href="/category/python.html">Python</a></li>
+                </ul>
+                </nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/flutter-and-java-es.html" rel="bookmark"
+           title="Permalink to Cómo combinar Flutter y Java en una Android App y por qué es importante.">Cómo combinar Flutter y Java en una Android App y por qué es importante.</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <span>dom 01 septiembre 2019</span>
+<span>| tags: <a href="/tag/mobile.html">mobile</a><a href="/tag/java.html">java</a><a href="/tag/flutter.html">flutter</a><a href="/tag/android.html">android</a></span>Translations:
+        <a href="/flutter-and-java.html">en</a>
+
+</footer><!-- /.post-info -->      <p>Hola hice un experimento: compilé una app Android en la que la lógica de proceso está escrita en java y la lógica de visualización (botones, vista) está hecha en Flutter. El código fuente está en el github de Flutter en este <a href="https://github.com/flutter/flutter/tree/master/examples/platform_view">repositorio github</a></p>
+<p>Este proyecto es básicamente un folder con código Flutter, que internamente tiene un subfolder con la parte java android del proyecto.</p>
+<p>Esa app es bastante simple: Tiene una pantalla Flutter con un botón que va sumando una cuenta y otro botón que, al apretarlo, muestra el resultado del conteo en una pantalla Android. Así que para llevar este flujo un poco más lejos del simple “hola mundo”, cambié luego la pantalla Android por una aplicación real android que tenía guardada que aplica OCR a video capturado por pantalla. Y después de algunos ajustes funcionó, tengo ahora una app Flutter, que, al apretar un botón, llama a una pantalla Android que hace un proceso java de OCR y además toma control de la cámara.</p>
+<p>Esto abre una posibilidad interesante: Tener, en un proyecto de desarrollo mobile con personas (o equipos) especializados de desarrollo diferentes para la capa UI y para la capa de lógica dura detrás. Esto es algo que ocurre con frecuencia en desarrollo de software, principalmente separando código frontend de código backend, así que podría aplicarse también a un desarrollo de app mobile. </p>
+<p>Lo anterior puede sonar extraño para algunos; pero si consideramos el contexto actual que tenemos (gran cantidad de código java android que va a quedar obsoleto debido a que kotlin es la nueva estrella de android) nos vemos en un momento de buscar alternativas. Y Flutter pinta muy bien pues podremos hacer apps android con un lenguaje y estilo modernos sin perder lo ya hecho en android.
+Además, existe una gran cantidad de librerías, APIs, servicios en la nube, etc. que al momento de ofrecer sus servicios nos dicen que descarguemos o usemos sus SDK java (si, java, no kotlin, java). Y por cierto, Flutter también puede conectarse con código Kotlin así que no hay problema por eso pensando a futuro.</p>
+<p>Esta separación de tareas tiene una ventaja extra: no es necesario abrir el Android Studio IDE para trabajar sobre la parte escrita con código Flutter del proyecto. Solamente se necesita alguna herramienta adecuada como Visual Studio Code. Esto facilita que personas con habilidades en QA, diseño, accesibilidad de interfaces (que hay que admitir que no son usualmente las habilidades favoritas de los programadores) puedan enfocarse en esa área de la aplicación y contribuir allí donde se les necesita sin tener que aprender AndroidStudio o Kotlin. Y por cierto, si, los programadores pueden seguir usando AndroidStudio y/o Kotlin para su parte que les toca del proyecto.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="https://planetpython.org/">Python news</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://www.pygame.org/">PyGame</a></li>
+                            <li><a href="https://planetpython.org/">Python planet</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme <a href="https://github.com/blueicefield/pelican-blueidea/">blueidea</a>, inspired by the default theme.</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
