@@ -15,6 +15,7 @@
                 <h1><a href="/">MaiteLab </a></h1>
                 <nav><ul>
                     <li><a href="/category/about.html">About</a></li>
+                    <li><a href="/category/java.html">Java</a></li>
                     <li><a href="/category/mobile.html">Mobile</a></li>
                     <li><a href="/category/python.html">Python</a></li>
                 </ul>
@@ -23,126 +24,59 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/python-gtk.html">Getting started with python and GTK</a></h1>
+                    <h1 class="entry-title"><a href="/python-wx-grid-fix.html">Accessibility fix for grids in wxPython</a></h1>
 <footer class="post-info">
-        <span>mar 01 enero 2019</span>
+        <span>vie 01 febrero 2019</span>
 <span>| tags: <a href="/tag/python.html">python</a><a href="/tag/gui.html">gui</a><a href="/tag/desktop.html">desktop</a></span>
-</footer><!-- /.post-info --><h1>Desktop App development with Python</h1>
-<p>Instructions for creating a "hello world" desktop app with python to get you started. We cover three different GUI libraries: wxPython, GTK and QT (look for all 3 options in different pages of this blog, in this current page we cover only one of the options). Please do not use python tk because it does not produce accessible software (That is, software that can be used with a screen reader). There are already a lot of tutorials on internet about how to make desktop apps with python, but they 
-don't tell you how to get started from zero, so we will cover that here.</p>
-<p>General notes to help you decide which UI library to use:</p>
-<ul>
-<li>Keep in mind that GTK is accessible in Linux, but not in Windows. Usually (if used correctly) GTK feels more natural in a Linux environment. The GNOME Desktop Environment is made with GTK.</li>
-<li>wxPython is often used by blind developers.</li>
-<li>QT is very mature and has extra features not available in the other libraries, like: Charts, Android deployment... Be sure to check the QT official web site for more info on what you can do with it.</li>
-<li>The KDE Desktop environment uses QT. </li>
-</ul>
-<h1>Hello World with python and GTK</h1>
-<p>First, some important facts:</p>
-<ul>
-<li>You will find many tutorials that actually advise you to avoid gtk or anything Gnome-related saying it is old or too complicated. Ignore them. Any library/framework/technology has its own pros/cons. At least do a "simple hello world" program in python+GTK using this guide, then make your own choice.</li>
-<li>This text is about using python 3, gtk 3 and pygobject (the gtk3 python bindings).</li>
-<li>Many thanks to "gavr" for making an awesome video about how to install gtk in windows! https://www.youtube.com/watch?v=XeS3InArxu0</li>
-</ul>
-<h3>How to install GTK development environment in Linux</h3>
-<p>If possible, use a linux distro with a Gnome desktop, not mandatory but will reduce the amount of files to download and may affect how your apps look and operate. </p>
-<p>Instructions for ubuntu (this will install gtk and the vala compiler):</p>
-<div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">glade</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">libgtk</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="n">dev</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">valac</span>
-</pre></div>
+</footer><!-- /.post-info --><p>Thanks to Ben Humprey for the hack of the grid in wxPython. Here is a copy of his email:</p>
+<div class="highlight"><pre><span></span>[<span class="nv">program</span><span class="o">-</span><span class="nv">l</span>] <span class="nv">wx</span> <span class="nv">python</span> <span class="nv">grid</span> <span class="ss">(</span><span class="nv">was</span>:<span class="nv">Re</span>: <span class="nv">Re</span>: <span class="nv">wxPython</span> <span class="nv">documentation</span> <span class="nv">and</span> <span class="nv">samples</span><span class="ss">)</span>   <span class="nv">Inbox</span>
+<span class="nv">Add</span> <span class="nv">star</span>  <span class="nv">Ben</span> <span class="nv">Humphreys</span><span class="o">&lt;</span><span class="nv">brhbrh</span>@<span class="nv">earthlink</span>.<span class="nv">net</span><span class="o">&gt;</span>   <span class="nv">Thu</span>, <span class="nv">Nov</span> <span class="mi">15</span>, <span class="mi">2018</span> <span class="nv">at</span> <span class="mi">7</span>:<span class="mi">31</span> <span class="nv">PM</span>
+<span class="nv">Reply</span><span class="o">-</span><span class="nv">To</span>: <span class="nv">program</span><span class="o">-</span><span class="nv">l</span>@<span class="nv">freelists</span>.<span class="nv">org</span>
+<span class="nv">To</span>: <span class="nv">program</span><span class="o">-</span><span class="nv">l</span>@<span class="nv">freelists</span>.<span class="nv">org</span>
+<span class="nv">Reply</span> <span class="o">|</span> <span class="nv">Reply</span> <span class="nv">to</span> <span class="nv">all</span> <span class="o">|</span> <span class="nv">Forward</span> <span class="o">|</span> <span class="nv">Print</span> <span class="o">|</span> <span class="nv">Delete</span> <span class="o">|</span> <span class="k">Show</span> <span class="nv">original</span>
+<span class="nv">Hi</span> <span class="nv">Taksan</span>,
+
+<span class="nv">Since</span> <span class="nv">wx</span> <span class="nv">python</span> <span class="nv">is</span> <span class="nv">otherwise</span> <span class="nv">accessible</span>, <span class="nv">I</span> <span class="nv">found</span> <span class="nv">a</span> <span class="nv">hack</span> <span class="k">for</span> <span class="nv">the</span> <span class="nv">grid</span>, <span class="nv">as</span> <span class="nv">follows</span>:
 
 
-<p>"Vala" is a programming language from the Gnome team, I recommend you try to learn more about it. For now, just to test we have a good installation, make a file called HelloWorld.vala 
-and put this inside  ( Example copied from https://developer.gnome.org/gnome-devel-demos/stable/hello-world.vala.html.en ):</p>
-<div class="highlight"><pre><span></span><span class="nv">public</span> <span class="nv">class</span> <span class="nv">MyApplication</span> : <span class="nv">Gtk</span>.<span class="nv">Application</span> {
-    <span class="nv">protected</span> <span class="nv">override</span> <span class="nv">void</span> <span class="nv">activate</span> <span class="ss">()</span> {
-        <span class="nv">var</span> <span class="nv">window</span> <span class="o">=</span> <span class="nv">new</span> <span class="nv">Gtk</span>.<span class="nv">ApplicationWindow</span> <span class="ss">(</span><span class="nv">this</span><span class="ss">)</span><span class="c1">;</span>
-        <span class="nv">var</span> <span class="nv">label</span> <span class="o">=</span> <span class="nv">new</span> <span class="nv">Gtk</span>.<span class="nv">Label</span> <span class="ss">(</span><span class="s2">&quot;</span><span class="s">Hello GNOME!</span><span class="s2">&quot;</span><span class="ss">)</span><span class="c1">;</span>
-        <span class="nv">window</span>.<span class="nv">add</span> <span class="ss">(</span><span class="nv">label</span><span class="ss">)</span><span class="c1">;</span>
-        <span class="nv">window</span>.<span class="nv">set_title</span> <span class="ss">(</span><span class="s2">&quot;</span><span class="s">Welcome to GNOME</span><span class="s2">&quot;</span><span class="ss">)</span><span class="c1">;</span>
-        <span class="nv">window</span>.<span class="nv">set_default_size</span> <span class="ss">(</span><span class="mi">200</span>, <span class="mi">100</span><span class="ss">)</span><span class="c1">;</span>
-        <span class="nv">window</span>.<span class="nv">show_all</span> <span class="ss">()</span><span class="c1">;</span>
-    }
-}
+# <span class="nv">After</span> <span class="nv">creating</span> <span class="nv">your</span> <span class="nv">grid</span>
+<span class="nv">self</span>.<span class="nv">grid</span>.<span class="nv">Bind</span><span class="ss">(</span><span class="nv">wx</span>.<span class="nv">grid</span>.<span class="nv">EVT_GRID_SELECT_CELL</span>, <span class="nv">self</span>.<span class="nv">onSelect</span><span class="ss">)</span>
 
-<span class="nv">public</span> <span class="nv">int</span> <span class="nv">main</span> <span class="ss">(</span><span class="nv">string</span>[] <span class="nv">args</span><span class="ss">)</span> {
-    <span class="k">return</span> <span class="nv">new</span> <span class="nv">MyApplication</span> <span class="ss">()</span>.<span class="nv">run</span> <span class="ss">(</span><span class="nv">args</span><span class="ss">)</span><span class="c1">;</span>
-}
-</pre></div>
+<span class="nv">def</span> <span class="nv">onSelect</span><span class="ss">(</span><span class="nv">self</span>, <span class="nv">event</span><span class="ss">)</span>:
+                <span class="nv">row</span> <span class="o">=</span> <span class="nv">event</span>.<span class="nv">GetRow</span><span class="ss">()</span>
+                <span class="nv">col</span> <span class="o">=</span> <span class="nv">event</span>.<span class="nv">GetCol</span><span class="ss">()</span>
+                <span class="nv">value</span> <span class="o">=</span> <span class="nv">self</span>.<span class="nv">grid</span>.<span class="nv">GetCellValue</span><span class="ss">(</span><span class="nv">row</span>, <span class="nv">col</span><span class="ss">)</span>
+                <span class="k">if</span> <span class="nv">value</span> <span class="nv">is</span> <span class="nv">not</span> <span class="nv">None</span>:
+                        <span class="nv">say</span><span class="ss">(</span><span class="nv">value</span><span class="ss">)</span>
 
 
-<p>Then, to compile that code, do this:</p>
-<div class="highlight"><pre><span></span><span class="n">valac</span> <span class="c1">--pkg gtk+-3.0 HelloWorld.vala</span>
-</pre></div>
+<span class="nv">And</span> <span class="nv">the</span> <span class="nv">say</span> <span class="nv">comes</span> <span class="nv">from</span> <span class="nv">the</span> <span class="nv">UniversalSpeech</span> <span class="nv">library</span>.
 
+<span class="nv">I</span><span class="s1">&#39;</span><span class="s">ve been meaning to submit this to the wx python developers, since all the other controls seem to be pretty accessible, this would seem to be an easy fix, but perhaps I am missing something.</span>
 
-<p>If everything is installed correctly you should now have an executable binary called "HelloWorld" that you can run by doing:</p>
-<div class="highlight"><pre><span></span><span class="p">.</span><span class="o">/</span><span class="n">HelloWorld</span>
-</pre></div>
+<span class="nv">All</span> <span class="nv">I</span> <span class="nv">know</span> <span class="nv">is</span> <span class="nv">it</span> <span class="nv">has</span> <span class="nv">something</span> <span class="nv">to</span> <span class="k">do</span> <span class="nv">with</span> <span class="nv">iAccessible2</span>.  <span class="nv">I</span> <span class="nv">wonder</span> <span class="k">if</span> <span class="nv">someone</span> <span class="nv">here</span> <span class="nv">can</span> <span class="nv">suggest</span> <span class="nv">better</span> <span class="nv">language</span> <span class="nv">than</span> <span class="nv">this</span> <span class="nv">when</span> <span class="nv">requesting</span> <span class="nv">the</span> <span class="nv">fix</span>?
 
-
-<p>Now, let's continue with python. </p>
-<div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">libgirepository1</span><span class="p">.</span><span class="mi">0</span><span class="o">-</span><span class="n">dev</span> <span class="n">gcc</span> <span class="n">libcairo2</span><span class="o">-</span><span class="n">dev</span> <span class="n">pkg</span><span class="o">-</span><span class="n">config</span> <span class="n">python3</span><span class="o">-</span><span class="n">dev</span> <span class="n">gir1</span><span class="p">.</span><span class="mi">2</span><span class="o">-</span><span class="n">gtk</span><span class="o">-</span><span class="mi">3</span><span class="p">.</span><span class="mi">0</span> 
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">venv</span>
-</pre></div>
-
-
-<p>Not mandatory, but recommended, create a python environment to work with pygobject (in this example we will call id "PyGObject"):</p>
-<div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">PyGObject</span>
-</pre></div>
-
-
-<p>Now let's activate that environment and install the necessary gtk python libraries:</p>
-<div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">PyGObject</span>
-<span class="k">source</span> <span class="n">bin</span><span class="o">/</span><span class="n">activate</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="c1">--upgrade pip wheel</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">pycairo</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">PyGObject</span>
-</pre></div>
-
-
-<p>Now you can create and run a hello world example in python+gtk:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gi</span>
-<span class="n">gi</span><span class="o">.</span><span class="n">require_version</span><span class="p">(</span><span class="s1">&#39;Gtk&#39;</span><span class="p">,</span> <span class="s1">&#39;3.0&#39;</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">gi.repository</span> <span class="kn">import</span> <span class="n">Gtk</span>
-
-<span class="n">win</span> <span class="o">=</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">Window</span><span class="p">()</span>
-<span class="n">win</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;destroy&quot;</span><span class="p">,</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">main_quit</span><span class="p">)</span>
-<span class="n">win</span><span class="o">.</span><span class="n">show_all</span><span class="p">()</span>
-<span class="n">Gtk</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
-</pre></div>
-
-
-<h3>How to install GTK+python development environment in Windows</h3>
-<p>In the past... GTK libraries for windows were provided/compiled by different people in the interent and you could just download and install them easily. Well, no more. Now you need to download
-a linux environment that lives inside your windows (called "MSYS2") then open a terminal command line from MSYS2 and use it like if it is a "mini linux" inside your
-windows and install the linux GTK libraries inside that console. Yes, sounds complicated and weird, but it is doable and at the 
-end you will have a full GTK development environment, no need to wait for "somebody in internet" to compile or provide that runtime for you. And if you are reading this you are a developer right? so you are not
-afraid of downloading and compiling software right? So let's do it:</p>
-<p>Watch and follow the instructions from this video https://www.youtube.com/watch?v=XeS3InArxu0
-After that, you should have a valid MSYS2 with gkt environment, able to compile a Gtk hello world in vala language, now install the pygobject libraries inside that MSYS2 terminal: </p>
-<div class="highlight"><pre><span></span><span class="n">pacman</span> <span class="o">-</span><span class="n">S</span> <span class="n">mingw</span><span class="o">-</span><span class="n">w64</span><span class="o">-</span><span class="n">x86_64</span><span class="o">-</span><span class="n">gtk3</span> <span class="n">mingw</span><span class="o">-</span><span class="n">w64</span><span class="o">-</span><span class="n">x86_64</span><span class="o">-</span><span class="n">python3</span> <span class="n">mingw</span><span class="o">-</span><span class="n">w64</span><span class="o">-</span><span class="n">x86_64</span><span class="o">-</span><span class="n">python3</span><span class="o">-</span><span class="n">gobject</span>
-</pre></div>
-
-
-<p>Now you can create and run a hello world example in python+gtk:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gi</span>
-<span class="n">gi</span><span class="o">.</span><span class="n">require_version</span><span class="p">(</span><span class="s1">&#39;Gtk&#39;</span><span class="p">,</span> <span class="s1">&#39;3.0&#39;</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">gi.repository</span> <span class="kn">import</span> <span class="n">Gtk</span>
-
-<span class="n">win</span> <span class="o">=</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">Window</span><span class="p">()</span>
-<span class="n">win</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;destroy&quot;</span><span class="p">,</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">main_quit</span><span class="p">)</span>
-<span class="n">win</span><span class="o">.</span><span class="n">show_all</span><span class="p">()</span>
-<span class="n">Gtk</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
-</pre></div>
-
-
-<p>To learn more about using pygobject go to https://pygobject.readthedocs.io</p>                </article>
+<span class="nv">Ben</span>
+</pre></div>                </article>
             </aside><!-- /#featured -->
                 <section id="content" class="body">
                     <h1>Other articles</h1>
                     <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/python-gtk.html" rel="bookmark"
+                           title="Permalink to Getting started with python and GTK">Getting started with python and GTK</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <span>mar 01 enero 2019</span>
+<span>| tags: <a href="/tag/python.html">python</a><a href="/tag/gui.html">gui</a><a href="/tag/desktop.html">desktop</a></span>
+</footer><!-- /.post-info -->                <p>How to start with python and GTK</p>
+                <a class="readmore" href="/python-gtk.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
