@@ -1,178 +1,405 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-        <meta charset="utf-8" />
-        <title>MaiteLab</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
+	<head>
 
-        <!--[if IE]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-</head>
+		<title>MaiteLab</title>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">MaiteLab </a></h1>
-                <nav><ul>
-                    <li><a href="/category/about.html">About</a></li>
-                    <li><a href="/category/java.html">Java</a></li>
-                    <li><a href="/category/mobile.html">Mobile</a></li>
-                    <li><a href="/category/python.html">Python</a></li>
-                </ul>
-                </nav>
-        </header><!-- /#banner -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/flutter-and-java.html">How to combine Flutter and Java in one Android App and why it matters.</a></h1>
-<footer class="post-info">
-        <span>dom 01 septiembre 2019</span>
-<span>| tags: <a href="/tag/mobile.html">mobile</a><a href="/tag/java.html">java</a><a href="/tag/flutter.html">flutter</a><a href="/tag/android.html">android</a></span>Translations:
-        <a href="/flutter-and-java-es.html">es</a>
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="assets/css/utilities.css">
 
-</footer><!-- /.post-info --><p>Hi! today I did an experiment: I compiled an Android App that has some java logic and shows the UI (button, view) using Flutter code. The project is in this <a href="https://github.com/flutter/flutter/tree/master/examples/platform_view">github repository</a></p>
-<p>That project is basically a Flutter project, which internally, has a subfolder with the java code section of the app.</p>
-<p>That app is pretty simple: The Flutter screen has a button that counts a number and another button to call a java Activity to show the result of the count. So to take this matter beyond the “hello world” example provided, I then changed the java part with the code of a previous java app I had, that takes control of the camera and applies OCR processing to the input video. After some adjustments I now have a Flutter app, that, when I press a button, opens a java activity and does OCR using the camera.</p>
-<p>This opens and interesting possibility: having in the same mobile development project people (or teams) specialized in different layers: UI and “behind logic”. This actually happens frequently in software development projects and we call it “separate fronted from backend” logic. And now we can apply that same concept to a mobile app development project.</p>
-<p>This may sound strange to some; but, if we consider the current state of matters (a huge amount of java code is about to become obsolete because kotlin is the new “star”) we need to find alternatives. And Flutter looks good because it allows us to make android apps with a modern style (and language) without losing legacy java code. Besides, there are lots of APIs and cloud services that tell us to download there java SDKs (yes, java, not kotlin) to work with them. Flutter also can connect to kotlin code so we are also covered in the future.</p>
-<p>This separation of concerns has an extra advantage: there is no need to open Android Studio IDE to work on the Flutter side of the project, you just need a good editor like Visual Studio Code. This makes it easier for people with skills in QA, UI design, UI accessibility to work on that section of the project. And we have to admit those are skills not usually preferred by developers. So those kind of people can focus on that area of the application and make contributions there, without having to learn AndroidStudio or Kotlin. By the way, developers can still use AndroidStudio and Kotlin in a Flutter project. </p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <ol id="posts-list" class="hfeed">
+		<link rel="stylesheet" href="assets/css/custom.css">
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/javafx-hello-world.html" rel="bookmark"
-                           title="Permalink to How to make a hello world with javafx and openjdk and Eclipse">How to make a hello world with javafx and openjdk and Eclipse</a></h1>
-                </header>
+		<link rel="stylesheet" href="assets/css/slick.min.css" type="text/css">
+		<link rel="stylesheet" href="assets/css/vegas.min.css" type="text/css">
+		<link rel="stylesheet" href="assets/css/featherlight.min.css" type="text/css">
+		<link rel="stylesheet" href="assets/css/featherlight.gallery.min.css" type="text/css">
+		<link rel="stylesheet" href="assets/css/fontawesome/all.min.css" type="text/css">
+		<link rel="stylesheet" href="assets/css/themify-icons.css" type="text/css">
 
-                <div class="entry-content">
-<footer class="post-info">
-        <span>jue 01 agosto 2019</span>
-<span>| tags: <a href="/tag/java.html">java</a><a href="/tag/javafx.html">javafx</a></span>
-</footer><!-- /.post-info -->                <p>How to make a hello world with javafx and openjdk and Eclipse</p>
-                <a class="readmore" href="/javafx-hello-world.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700%7CMRoboto:300,400,500,700display=swap" rel="stylesheet">
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/python-cxfreeze-es.html" rel="bookmark"
-                           title="Permalink to Generar un ejecutable de CEF Python">Generar un ejecutable de CEF Python</a></h1>
-                </header>
+		<link rel="shortcut icon" href="assets/images/favicon.ico">
 
-                <div class="entry-content">
-<footer class="post-info">
-        <span>lun 01 julio 2019</span>
-<span>| tags: <a href="/tag/python.html">python</a></span>
-</footer><!-- /.post-info -->                <p>Cómo generar un ejecutable de CEF Python</p>
-                <a class="readmore" href="/python-cxfreeze-es.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
+	</head>
+	<body>
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/python-wx-grid-fix.html" rel="bookmark"
-                           title="Permalink to Accessibility fix for grids in wxPython">Accessibility fix for grids in wxPython</a></h1>
-                </header>
+		<div id="preloader" class="preloader">
+			<div class="loader-status">
+				<div class="spinner"></div>
+			</div>
+		</div>
 
-                <div class="entry-content">
-<footer class="post-info">
-        <span>vie 01 febrero 2019</span>
-<span>| tags: <a href="/tag/python.html">python</a><a href="/tag/gui.html">gui</a><a href="/tag/desktop.html">desktop</a></span>
-</footer><!-- /.post-info -->                <p>Accessibility fix for grids in wxPython</p>
-                <a class="readmore" href="/python-wx-grid-fix.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
+		<div class="site-container">
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/about.html" rel="bookmark"
-                           title="Permalink to About MaiteLab">About MaiteLab</a></h1>
-                </header>
+			<div id="top"></div>
 
-                <div class="entry-content">
-<footer class="post-info">
-        <span>mar 01 enero 2019</span>
-<span>| tags: <a href="/tag/about.html">about</a></span>
-</footer><!-- /.post-info -->                <p>About this website</p>
-                <a class="readmore" href="/about.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
+			<!-- Mobile logo -->
+			<a href="#" class="mobile-logo mobile-logo-light bg-primary">
+				<span>MaiteLab</span>
+			</a>
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/python-gtk.html" rel="bookmark"
-                           title="Permalink to Getting started with python and GTK">Getting started with python and GTK</a></h1>
-                </header>
+			<!-- Navigation toggle -->
+			<button type="button" id="navigation-toggle" class="nav-toggle nav-toggle-light bg-primary">
+				<span></span>
+			</button>
 
-                <div class="entry-content">
-<footer class="post-info">
-        <span>mar 01 enero 2019</span>
-<span>| tags: <a href="/tag/python.html">python</a><a href="/tag/gui.html">gui</a><a href="/tag/desktop.html">desktop</a></span>
-</footer><!-- /.post-info -->                <p>How to start with python and GTK</p>
-                <a class="readmore" href="/python-gtk.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
+			<!-- Site header -->
+			<header class="site-header bg-primary">
+				<div class="header-inner">
+					<div class="header-brand">
+						<!-- Logo -->
+						<a href="#" class="logo">
+							<span>MaiteLab</span>
+							<span class="title-letter">ML</span>
+						</a>
+					</div>
+					<div class="nav-divider mb-5"></div>
+					<nav class="site-nav">
+						<ul id="navigation">
+							<li>
+								<a href="#home" class="scrollto">Inicio</a>
+							</li>
+							<li>
+								<a href="#about" class="scrollto">Acerca de</a>
+							</li>
+ 
+							<li>
+								<a href="#portfolio" class="scrollto">Proyectos</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="nav-divider my-5"></div>
+					<nav>
+						<ul class="list-inline text-center">
+							<li class="list-inline-item">
+								<a class="btn btn-sm btn-icon btn-outline-dark btn-transparent rounded-circle" href="facebook.com/ignis.animus.12">
+									<span class="btn-icon-inner fab fa-facebook-f"></span>
+								</a>
+							</li>
+							<li class="list-inline-item">
+								<a class="btn btn-sm btn-icon btn-outline-dark btn-transparent rounded-circle" href="www.linkedin.com/in/henry-tong-05568a126">
+									<span class="btn-icon-inner fab fa-linkedin"></span>
+								</a>
+							</li>
+							<li class="list-inline-item">
+								<a class="btn btn-sm btn-icon btn-outline-dark btn-transparent rounded-circle" href="mailto:caminardespierto@gmail.com">
+									<span class="btn-icon-inner far fa-envelope"></span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</header>
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/python-qt.html" rel="bookmark"
-                           title="Permalink to Getting started with python and QT">Getting started with python and QT</a></h1>
-                </header>
+			<!-- Header overlay -->
+			<div class="header-overlay">
+				<div class="overlay-inner bg-dark opacity-80"></div>
+			</div>
 
-                <div class="entry-content">
-<footer class="post-info">
-        <span>mar 01 enero 2019</span>
-<span>| tags: <a href="/tag/python.html">python</a><a href="/tag/gui.html">gui</a><a href="/tag/desktop.html">desktop</a></span>
-</footer><!-- /.post-info -->                <p>How to start with python and QT</p>
-                <a class="readmore" href="/python-qt.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
+			<!-- Back to top button -->
+			<button type="button" id="backtotop" class="btn btn-primary btn-icon">
+				<span class="btn-icon-inner fas fa-angle-up"></span>
+			</button>
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/python-wx.html" rel="bookmark"
-                           title="Permalink to Getting started with python and wxPython">Getting started with python and wxPython</a></h1>
-                </header>
+			<!-- Page wrapper -->
+			<div class="page-wrapper">
+				<div id="page-cover" class="page-cover">
+					<div class="page-cover-wrapper-fixed">
+						<div class="page-cover-bg bg-primary"></div>
+						<div class="page-cover-wrap">
 
-                <div class="entry-content">
-<footer class="post-info">
-        <span>mar 01 enero 2019</span>
-<span>| tags: <a href="/tag/python.html">python</a><a href="/tag/gui.html">gui</a><a href="/tag/desktop.html">desktop</a></span>
-</footer><!-- /.post-info -->                <p>How to start with python and wxPython</p>
-                <a class="readmore" href="/python-wx.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-            </ol><!-- /#posts-list -->
-<p class="paginator">
-    Page 1 / 1
-</p>
-            </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>blogroll</h2>
-                        <ul>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="https://planetpython.org/">Python news</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
+							<section id="home" class="d-flex mh-100vh">
+								<div class="container align-self-center text-white text-center">
+									<div class="u-avatar u-avatar-5x u-avatar-md-6x u-avatar-lg-7x u-avatar-modern u-avatar-rounded-circle mx-auto mb-4">
+										<img src="demo/images/avatar_small.jpg" alt="">
+									</div>
+									<h1 class="mb-2 mb-lg-3">MaiteLab</h1>
+									<p class="lead mb-0">Laboratorio de informática</p>
+									<span class="cover-letter letter-xl">ML</span>
+								</div>
+							</section>
 
-                            <li><a href="https://www.pygame.org/">PyGame</a></li>
-                            <li><a href="https://planetpython.org/">Python planet</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
+						</div>
+					</div>
+				</div><!--end .page-cover -->
 
-        <footer id="contentinfo" class="body">
-                <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme <a href="https://github.com/blueicefield/pelican-blueidea/">blueidea</a>, inspired by the default theme.</p>
-        </footer><!-- /#contentinfo -->
+				<div class="page-content">
 
-</body>
+					<section id="about">
+						<div class="container">
+							<div class="section-title h2 text-center mb-5">
+								<h2 class="mb-0">MaiteLab</h2>
+								<span class="title-letter">ML</span>
+							</div>
+							<div class="row">
+								<div class="col-md-6 col-lg-4 d-none d-lg-block">
+									<img class="img-fluid w-100 rounded" src="demo/images/avatar.jpg" alt="">
+								</div>
+								<div class="col-lg-8">
+									<h3>Creado por Henry Tong</h3>
+									<p class="lead">Arquitecto de Software</p>
+									<p class="mb-5">Bienvenidos, aquí encontrarán experimentos, ideas y proyectos que buscan aplicar herramientas 
+informáticas en la generación de <b>Tecnología Asistiva</b>, la cual es toda ayuda técnica o tecnológica que busca promover la autonomía de 
+las personas con discapacidad (visual, auditiva, .etc.), para facilitar su inclusión educativa, social y digital, mejorando así su calidad de vida. Los invitamos a probar y participar de los proyectos y bienvenidos sean los comentarios y aportes.</p>
+ 
+ 
+								</div>
+							</div>
+						</div>
+					</section>
+ 
+ 
+
+					<section id="portfolio">
+
+
+						<div class="container">
+							<div class="row mb-5">
+								<div class="col-lg-10 col-xl-8 mx-lg-auto text-center">
+									<div class="section-title h2 mb-3">
+										<h2 class="mb-0">Proyectos</h2>
+										<span class="title-letter">P</span>
+									</div>
+									<nav class="portfolio-filter isotope-filter">
+										<ul class="justify-content-center">
+											<li><a href="#" class="active" data-filter="*">Todos</a></li>
+											<li><a href="#" data-filter=".web">Webs</a></li>
+											<li><a href="#" data-filter=".brand">Apps</a></li>
+										</ul>
+									</nav>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="container">
+							<div class="portfolio-container isotope-container row my-n2 mx-sm-n2">
+								<div class="isotope-item col-sm-6 col-lg-4 py-2 px-sm-2 web">
+									<div class="portfolio-item details-inside">
+										<a href="portfolio-single-tamico.html">
+											<div class="item-media">
+												<img src="demo/images/portfolio/project-tamico.jpg" alt="">
+											</div>
+											<div class="item-overlay bg-dark"></div>
+											<div class="item-details">
+												<h4 class="h5">Tamico - Etiquetar con códigos QR</h4>
+												<p class="font-italic">Web</p>
+											</div>
+										</a>
+									</div>
+								</div>
+
+								<div class="isotope-item col-sm-6 col-lg-4 py-2 px-sm-2 brand">
+									<div class="portfolio-item details-inside">
+										<a href="portfolio-single-guadalupa.html">
+											<div class="item-media">
+												<img src="demo/images/portfolio/project-guadalupa.jpg" alt="">
+											</div>
+											<div class="item-overlay bg-dark"></div>
+											<div class="item-details">
+												<h4 class="h5">Guadalupa - Magnificador</h4>
+												<p class="font-italic">App</p>
+											</div>
+										</a>
+									</div>
+								</div>
+
+								<div class="isotope-item col-sm-6 col-lg-4 py-2 px-sm-2 brand">
+									<div class="portfolio-item details-inside">
+										<a href="portfolio-single-rimay.html">
+											<div class="item-media">
+												<img src="demo/images/portfolio/project-rimay.jpg" alt="">
+											</div>
+											<div class="item-overlay bg-dark"></div>
+											<div class="item-details">
+												<h4 class="h5">Rimay - Lector de textos</h4>
+												<p class="font-italic">App</p>
+											</div>
+										</a>
+									</div>
+								</div>
+							
+
+								<div class="isotope-item col-sm-6 col-lg-4 py-2 px-sm-2 brand">
+									<div class="portfolio-item details-inside">
+										<a href="portfolio-single-biblial.html">
+											<div class="item-media">
+												<img src="demo/images/portfolio/project-biblial.jpg" alt="">
+											</div>
+											<div class="item-overlay bg-dark"></div>
+											<div class="item-details">
+												<h4 class="h5">Biblia Latinoamericana</h4>
+												<p class="font-italic">App</p>
+											</div>
+										</a>
+									</div>
+								</div>
+
+								<div class="isotope-item col-sm-6 col-lg-4 py-2 px-sm-2 brand">
+									<div class="portfolio-item details-inside">
+										<a href="portfolio-single-maitenotas.html">
+											<div class="item-media">
+												<img src="demo/images/portfolio/project-maitenotas.jpg" alt="">
+											</div>
+											<div class="item-overlay bg-dark"></div>
+											<div class="item-details">
+												<h4 class="h5">Maitenotas - Diario protegido con contraseña</h4>
+												<p class="font-italic">App</p>
+											</div>
+										</a>
+									</div>
+								</div>
+
+
+								<div class="isotope-item col-sm-6 col-lg-4 py-2 px-sm-2 web">
+									<div class="portfolio-item details-inside">
+										<a href="portfolio-single-gaviota.html">
+											<div class="item-media">
+												<img src="demo/images/portfolio/project-gaviota.jpg" alt="">
+											</div>
+											<div class="item-overlay bg-dark"></div>
+											<div class="item-details">
+												<h4 class="h5">Gaviota - Extractor de noticias</h4>
+												<p class="font-italic">Web</p>
+											</div>
+										</a>
+									</div>
+								</div>								
+
+
+
+							</div>
+						</div>
+
+					</section>
+
+					<section>
+						<div class="overlay">
+							<div class="overlay-inner bg-image-holder bg-cover bg-center">
+								<img src="demo/images/image-5.jpg" alt="background">
+							</div>
+							<div class="overlay-inner bg-dark opacity-70"></div>
+						</div>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-11 col-xl-10 mx-lg-auto text-center text-white">
+									<div class="slider dots-light dots-outside" data-slick='{"dots":true,"arrows":false}'>
+										<div>
+											<div class="icon-font-3x mb-5">
+												<i class="fa fa-quote-right"></i>
+											</div>
+											<blockquote>
+												<p class="mb-5">Peor que no tener vista, es no tener visión.</p>
+												<footer class="d-flex justify-content-center align-items-center w-lg-50 mx-auto text-left">
+													<div class="u-avatar u-avatar-rounded-circle">
+														<img class="img-fluid" src="demo/images/avatar_small.jpg" alt="">
+													</div>
+													<div class="ml-3">
+														<h4 class="h6 mb-0">Hellen Keller</h4>
+														<small>Escritora, oradora y activista política sordociega</small>
+													</div>
+												</footer>
+											</blockquote>
+										</div>
+
+										<div>
+											<div class="icon-font-3x mb-5">
+												<i class="fa fa-quote-right"></i>
+											</div>
+											<blockquote>
+												<p class="mb-5">No siempre podemos hacer grandes cosas, pero sí podemos hacer cosas pequeñas con gran amor.</p>
+												<footer class="d-flex justify-content-center align-items-center w-lg-50 mx-auto text-left">
+													<div class="u-avatar u-avatar-rounded-circle">
+														<img class="img-fluid" src="demo/images/avatar_small.jpg" alt="">
+													</div>
+													<div class="ml-3">
+														<h4 class="h6 mb-0">Madre Teresa de Calcuta</h4>
+														<small>Monja católica</small>
+													</div>
+												</footer>
+											</blockquote>
+										</div>
+
+										<div>
+											<div class="icon-font-3x mb-5">
+												<i class="fa fa-quote-right"></i>
+											</div>
+											<blockquote>
+												<p class="mb-5">La utopía está en el horizonte. Camino dos pasos, ella se aleja dos pasos y el horizonte se corre diez pasos más allá. ¿Entonces para qué sirve la utopía? Para eso, sirve para caminar.</p>
+												<footer class="d-flex justify-content-center align-items-center w-lg-50 mx-auto text-left">
+													<div class="u-avatar u-avatar-rounded-circle">
+														<img class="img-fluid" src="demo/images/avatar_small.jpg" alt="">
+													</div>
+													<div class="ml-3">
+														<h4 class="h6 mb-0">Eduardo Galeano</h4>
+														<small>Periodista, escritor y novelista</small>
+													</div>
+												</footer>
+											</blockquote>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+	 
+
+	 
+
+					<!-- Site footer -->
+					<footer class="site-footer bg-light">
+						<div class="container">
+							<nav class="mb-3">
+								<ul class="list-inline text-center">
+									<li class="list-inline-item">
+										<a class="btn btn-sm btn-icon btn-outline-dark btn-transparent rounded-circle" href="http://www.facebook.com/ignis.animus.12">
+											<span class="btn-icon-inner fab fa-facebook-f"></span>
+										</a>
+									</li>
+									<li class="list-inline-item">
+										<a class="btn btn-sm btn-icon btn-outline-dark btn-transparent rounded-circle" href="http://www.linkedin.com/in/henry-tong-05568a126">
+											<span class="btn-icon-inner fab fa-linkedin"></span>
+										</a>
+									</li>
+									<li class="list-inline-item">
+										<a class="btn btn-sm btn-icon btn-outline-dark btn-transparent rounded-circle" href="mailto:caminardespierto@gmail.com">
+											<span class="btn-icon-inner far fa-envelope"></span>
+										</a>
+									</li>
+								</ul>
+							</nav>
+							<p class="text-center">MaiteLab</p>
+						</div>
+					</footer>
+
+				</div><!--end .page-content -->
+			</div><!-- end .page-wrapper -->
+
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/bootstrap.bundle.min.js"></script>
+		<script src="assets/js/jquery.easing.min.js"></script>
+		<script src="assets/js/jquery.validate.min.js"></script>
+		<script src="assets/js/jquery.form.min.js"></script>
+		<script src="assets/js/imagesloaded.pkgd.min.js"></script>
+		<script src="assets/js/isotope.pkgd.min.js"></script>
+		<script src="assets/js/jquery.detect_swipe.min.js"></script>
+		<script src="assets/js/featherlight.min.js"></script>
+		<script src="assets/js/featherlight.gallery.min.js"></script>
+		<script src="assets/js/granim.min.js"></script>
+		<script src="assets/js/slick.min.js"></script>
+		<script src="assets/js/vegas.min.js"></script>
+		<script src="assets/js/typed.min.js"></script>
+
+		<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
